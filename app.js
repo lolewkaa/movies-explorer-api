@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const mongoose = require('mongoose');
-// const cors = require('cors');
+const cors = require('cors');
 const { errors } = require('celebrate');
 const helmet = require('helmet');
 const rateLimiter = require('./middlewares/rateLimiter');
@@ -13,7 +13,7 @@ const { PORT, MONGO_DB } = require('./utils/constant');
 const router = require('./routes');
 
 const app = express();
-// app.use(cors());
+app.use(cors());
 
 // анализирует входящие запросы JSON и помещает проанализированные данные в файлы req.body
 app.use(express.json());
