@@ -31,10 +31,10 @@ const createUser = (req, res, next) => {
 };
 
 const updateUser = (req, res, next) => {
-  const { name, about } = req.body;
+  const { name, email } = req.body;
   const { _id } = req.user;
 
-  User.findByIdAndUpdate(_id, { name, about }, { new: true, runValidators: true })
+  User.findByIdAndUpdate(_id, { name, email }, { new: true, runValidators: true })
     .then((user) => res.send(user))
     .catch((err) => {
       if (err.name === 'ValidationError') {
