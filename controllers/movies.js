@@ -8,7 +8,7 @@ const getMovies = (req, res, next) => {
   const { _id } = req.user;
 
   Movie.find({ owner: _id })
-    .populate(['owner', '_id'])
+    // .populate(['owner', '_id'])
     .then((movies) => res.send(movies))
     .catch(next);
 };
