@@ -3,8 +3,8 @@ const { validationCreateMovie, validationGetMovieById } = require('../utils/rege
 
 const { deleteMovie, createMovie, getMovies } = require('../controllers/movies');
 
-router.get('/', getMovies);
-router.post('/', validationCreateMovie, createMovie);
-router.delete('/:_id', validationGetMovieById, deleteMovie);
+router.get('/movies', getMovies);
+router.post('/movies', validationCreateMovie, createMovie);
+router.delete('/movies/:_id', validationGetMovieById, deleteMovie);
 
 module.exports = router;
