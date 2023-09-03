@@ -3,7 +3,7 @@ const { validationUpdateUser } = require('../utils/regex');
 
 const { updateUser, getUserInfo } = require('../controllers/users');
 
-router.get('/users/me', getUserInfo);
-router.patch('/users/me', validationUpdateUser, updateUser);
+router.get('/me', getUserInfo);
+router.patch('/me', validationUpdateUser, updateUser);
 
 module.exports = router;
