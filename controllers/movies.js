@@ -55,7 +55,7 @@ const createMovie = (req, res, next) => {
 };
 
 const deleteMovie = (req, res, next) => {
-  Movie.findById(req.params._id)
+  Movie.findById(req.params.movieId)
     .then((movie) => {
       if (!movie) throw new NotFoundError('Карточка не найдена');
       if (req.user._id !== movie.owner.toString()) {
